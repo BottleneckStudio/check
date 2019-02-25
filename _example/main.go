@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/check"
+	"github.com/BottleneckStudio/check/check"
 )
 
 func main() {
