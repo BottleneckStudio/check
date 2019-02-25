@@ -1,0 +1,14 @@
+mode: set
+github.com/check/check.go:29.29,33.16 3 1
+github.com/check/check.go:37.2,51.16 5 1
+github.com/check/check.go:55.2,58.16 3 1
+github.com/check/check.go:62.2,65.16 3 1
+github.com/check/check.go:69.2,69.45 1 1
+github.com/check/check.go:73.2,73.36 1 1
+github.com/check/check.go:77.2,77.42 1 1
+github.com/check/check.go:33.16,35.3 1 0
+github.com/check/check.go:51.16,53.3 1 0
+github.com/check/check.go:58.16,60.3 1 0
+github.com/check/check.go:65.16,67.3 1 0
+github.com/check/check.go:69.45,71.3 1 1
+github.com/check/check.go:73.36,75.3 1 1
