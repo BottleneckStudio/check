@@ -3,7 +3,7 @@ package check_test
 import (
 	"testing"
 
-	"github.com/check"
+	"github.com/BottleneckStudio/check"
 )
 
 func TestCheck(t *testing.T) {
