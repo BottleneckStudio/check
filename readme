@@ -4,4 +4,7 @@
 A package that checks whether a given site is up or not.
 
 
-Heavily inspired from https://github.com/sindresorhus/is-up.
+Heavily inspired from https://github.com/sindresorhus/is-up. Just translated to Golang.
+
+* Installation
+> go get -u github.com/BottleneckStudio/check
