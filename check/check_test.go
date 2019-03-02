@@ -60,6 +60,15 @@ func TestCheck(t *testing.T) {
 			if !contains(tt.expectedIPs, ip) {
 				t.Errorf("IP: %s is not in the list", ip)
 			}
+
+			v := check.Verbose()
+
+			if v == "" {
+				t.Errorf("%s is Empty", v)
+			}
+
+			t.Log(ip)
+			t.Log(v)
 		})
 	}
 
