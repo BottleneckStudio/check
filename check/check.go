@@ -116,6 +116,47 @@ func (c *Check) IP() string {
 	return c.Res.ResponseIP
 }
 
+// Verbose returns a prettified JSON format as a string.
+// Example output:
+// {
+//     "domain": "google.com",
+//     "port": 80,
+//     "status_code": 1,
+//     "response_ip": "216.58.201.46",
+//     "response_code": 301,
+//     "response_time": 0.007
+// }
+func (c *Check) Verbose() string {
+	c.mu.RLock()
+	defer c.mu.RUnlock()
+
+	iur := IsUpResponse{}
+
+	body, err := getResponseBody(c.Client, c.Req)
+	if err != nil {
+		return ""
+	}
+	err = json.Unmarshal(body, &iur)
+	if err != nil {
+		return ""
+	}
+
+	return iur.String()
+}
+
+func (iur IsUpResponse) String() string {
+	return fmt.Sprintf(`
+		{
+			"domain": %s,
+			"port": %d,
+			"status_code": %d,
+			"response_ip": %s,
+			"response_code": %d,
+			"response_time": %.2f
+		}
+	`, iur.Domain, iur.Port, iur.StatusCode, iur.ResponseIP, iur.ResponseCode, iur.ResponseTime)
+}
+
 func getResponseBody(c *http.Client, req *http.Request) ([]byte, error) {
 	resp, err := c.Do(req)
 
