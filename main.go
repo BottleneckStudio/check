@@ -16,11 +16,9 @@ func main() {
 	app.Action = func(c *cli.Context) error {
 		site := c.Args().Get(0)
 		isUp := check.IsUp(site)
-		var msg string
+		msg := "down"
 		if isUp {
 			msg = "up"
-		} else {
-			msg = "down"
 		}
 		fmt.Printf("Site %s is %s", site, msg)
 		return nil
